@@ -192,6 +192,18 @@ export function getMockService() {
           return result
         },
       }),
+      info: Server.provideAdvanced({
+        capability: StorefrontCaps.filecoinInfo,
+        handler: async ({ invocation, context }) => {
+          const invCap = invocation.capabilities[0]
+          if (!invCap.nb?.piece) {
+            throw new Error()
+          }
+          return Server.ok({
+            piece: invCap.nb.piece,
+            deals: []
+          })
+        }})
     },
     deal: {
       info: Server.provideAdvanced({

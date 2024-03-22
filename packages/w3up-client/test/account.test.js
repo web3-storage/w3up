@@ -286,6 +286,42 @@ export const testAccount = {
 
     assert.deepEqual(client.currentSpace()?.did(), space.did())
   },
+
+  'only redundant logins': async (
+    assert,
+    { client, mail, grantAccess, plansStorage }
+  ) => {
+    const email = 'alice@web.mail'
+    const sessions = []
+    const pairs = 2
+    for (const _ of Array(pairs)) {
+      const login = Account.login(client, email)
+      // do not grant access right away so we end up with distinct sessions
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await grantAccess(await mail.take())
+      const account = Result.try(await login)
+      sessions.push(account)
+    }
+
+    // we create temporary account sessions and then save them to avoid
+    // login idempotence.
+    for (const session of sessions) {
+      Result.try(await session.save())
+    }
+
+    const account = Object.values(client.accounts())[0]
+    assert.equal(
+      account.proofs.length,
+      pairs * 2,
+      `should have ${pairs * 2} proofs`
+    )
+
+    // setup a billing for this account
+    plansStorage.set(account.did(), client.agent.connection.id.did())
+
+    const space = await client.createSpace('test')
+    account.provision(space.did())
+  },
 }
 
 Test.test({ Account: testAccount })

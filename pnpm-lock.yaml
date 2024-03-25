@@ -169,6 +169,9 @@ importers:
       '@web3-storage/data-segment':
         specifier: ^3.2.0
         version: 3.2.0
+      uint8arrays:
+        specifier: ^5.0.3
+        version: 5.0.3
     devDependencies:
       '@types/assert':
         specifier: ^1.5.6
@@ -412,6 +415,9 @@ importers:
       p-retry:
         specifier: ^5.1.2
         version: 5.1.2
+      uint8arrays:
+        specifier: ^5.0.3
+        version: 5.0.3
     devDependencies:
       '@ipld/car':
         specifier: ^5.1.1
@@ -422,6 +428,9 @@ importers:
       '@types/mocha':
         specifier: ^10.0.1
         version: 10.0.4
+      '@types/sinon':
+        specifier: ^17.0.3
+        version: 17.0.3
       '@ucanto/core':
         specifier: ^9.0.1
         version: 9.0.1
@@ -443,6 +452,9 @@ importers:
       one-webcrypto:
         specifier: git://github.com/web3-storage/one-webcrypto
         version: github.com/web3-storage/one-webcrypto/5148cd14d5489a8ac4cd38223870e02db15a2382
+      p-defer:
+        specifier: ^4.0.0
+        version: 4.0.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -4082,6 +4094,12 @@ packages:
 
   /@types/sinon@10.0.20:
     resolution: {integrity: sha512-2APKKruFNCAZgx3daAyACGzWuJ028VVCUDk6o2rw/Z4PXT0ogwdV4KUegW0MwVs0Zu59auPXbbuBJHF12Sx1Eg==}
+    dependencies:
+      '@types/sinonjs__fake-timers': 8.1.5
+    dev: true
+
+  /@types/sinon@17.0.3:
+    resolution: {integrity: sha512-j3uovdn8ewky9kRBG19bOwaZbexJu/XjtkHyjvUgt4xfPFz18dcORIMqnYh66Fx3Powhcr85NT5+er3+oViapw==}
     dependencies:
       '@types/sinonjs__fake-timers': 8.1.5
     dev: true

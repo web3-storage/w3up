@@ -182,6 +182,7 @@
     "@web3-storage/did-mailto": "workspace:^",
     "@web3-storage/filecoin-api": "workspace:^",
     "multiformats": "^12.1.2",
+    "uint8arrays": "^5.0.3",
     "p-retry": "^5.1.2"
   },
   "devDependencies": {
@@ -189,12 +190,14 @@
     "@ipld/dag-ucan": "^3.4.0",
     "@types/mocha": "^10.0.1",
     "@ucanto/core": "^9.0.1",
+    "@types/sinon": "^17.0.3",
     "@web-std/blob": "^3.0.5",
     "@web3-storage/eslint-config-w3up": "workspace:^",
     "@web3-storage/sigv4": "^1.0.2",
     "is-subset": "^0.1.1",
     "mocha": "^10.2.0",
     "one-webcrypto": "git://github.com/web3-storage/one-webcrypto",
+    "p-defer": "^4.0.0",
     "typescript": "5.2.2"
   },
   "eslintConfig": {

@@ -7,6 +7,7 @@ import * as RateLimitAdd from './handlers/rate-limit/add.js'
 import * as RateLimitList from './handlers/rate-limit/list.js'
 import * as RateLimitRemove from './handlers/rate-limit/remove.js'
 import * as Store from './handlers/store.js'
+import * as Blob from './handlers/blob.js'
 import * as Subscription from './handlers/subscription.js'
 import * as Upload from './handlers/upload.js'
 import * as Plan from './handlers/plan.js'
@@ -23,6 +24,7 @@ export * from './util.js'
 
 export const test = {
   ...Store.test,
+  ...Blob.test,
   ...Upload.test,
 }
 
@@ -44,6 +46,7 @@ export const handlerTests = {
   ...RateLimitList,
   ...RateLimitRemove,
   ...Store.test,
+  ...Blob.test,
   ...Subscription.test,
   ...Upload.test,
   ...Plan.test,

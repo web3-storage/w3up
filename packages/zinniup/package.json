@@ -1,0 +1,35 @@
+{
+  "name": "@web3-storage/zinniup",
+  "description": "The upload api for web3.storage, on Zinnia!",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/main.js",
+  "homepage": "https://web3.storage",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-storage/w3up.git",
+    "directory": "packages/zinniup"
+  },
+  "files": [
+    "src",
+    "test",
+    "dist/**/*.d.ts",
+    "dist/**/*.d.ts.map"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "start": "zinnia run dist/main.js"
+  },
+  "dependencies": {
+    "@ucanto/principal": "^9.0.0",
+    "@web3-storage/upload-api": "workspace:^"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.13.0"
+  },
+  "engines": {
+    "node": ">=16.15"
+  }
+}

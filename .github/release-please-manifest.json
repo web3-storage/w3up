@@ -6,5 +6,5 @@
   "packages/upload-api": "9.0.0",
   "packages/upload-client": "13.1.0",
   "packages/w3up-client": "12.5.0",
-  "packages/did-mailto": "2.0.2"
+  "packages/did-mailto": "2.1.0"
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.3.0](https://github.com/web3-storage/w3up/compare/access-v18.2.0...access-v18.3.0) (2024-03-26)
+
+
+### Features
+
+* upgrade ucanto/transport to 9.1.0 in all packages to get more verbose errors from HTTP transport on non-ok response ([#1312](https://github.com/web3-storage/w3up/issues/1312)) ([d6978d7](https://github.com/web3-storage/w3up/commit/d6978d7ab299be76987c6533d18e6857f6998fe6))
+
 ## [18.2.0](https://github.com/web3-storage/w3up/compare/access-v18.1.1...access-v18.2.0) (2024-01-29)
 
 

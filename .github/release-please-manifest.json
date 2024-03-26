@@ -1,5 +1,5 @@
 {
-  "packages/access-client": "18.2.0",
+  "packages/access-client": "18.3.0",
   "packages/filecoin-api": "4.5.0",
   "packages/filecoin-client": "3.3.0",
   "packages/capabilities": "13.2.0",

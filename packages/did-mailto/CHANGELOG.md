@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.1.0](https://github.com/web3-storage/w3up/compare/did-mailto-v2.0.2...did-mailto-v2.1.0) (2024-03-26)
+
+
+### Features
+
+* add usage/report capability ([#1079](https://github.com/web3-storage/w3up/issues/1079)) ([6418b4b](https://github.com/web3-storage/w3up/commit/6418b4b22329a118fb258928bd9a6a45ced5ce45))
+
+
+### Fixes
+
+* floating promises and add no-floating-promises to eslint-config-w3up ([#1198](https://github.com/web3-storage/w3up/issues/1198)) ([1b8c5aa](https://github.com/web3-storage/w3up/commit/1b8c5aa86ec3d177bf77df4e2916699c1f522598))
+* issue where typedoc docs would only show full docs for w3up-client ([#1141](https://github.com/web3-storage/w3up/issues/1141)) ([0b8d3f3](https://github.com/web3-storage/w3up/commit/0b8d3f3b52918b1b4d3b76ea6fea3fb0c837cd73))
+* package metadata ([#1161](https://github.com/web3-storage/w3up/issues/1161)) ([b8a1cc2](https://github.com/web3-storage/w3up/commit/b8a1cc2e125a91be582998bda295e1ae1caab087))
+
+
+### Other Changes
+
+* correct typo in index.js error ([#1204](https://github.com/web3-storage/w3up/issues/1204)) ([f54b343](https://github.com/web3-storage/w3up/commit/f54b34317195ff51f87bd68db1cc8c36748eac50))
+* **main:** release did-mailto 2.1.0 ([#1080](https://github.com/web3-storage/w3up/issues/1080)) ([50543f1](https://github.com/web3-storage/w3up/commit/50543f10d8e0186b85ace94f228ba82977c76e77))
+* no longer depends on hd-scripts, packages use/configure eslint directly, fixes warnings from npm lint script ([#1058](https://github.com/web3-storage/w3up/issues/1058)) ([ebdb99b](https://github.com/web3-storage/w3up/commit/ebdb99b0d3fc912f93ace3d533b915f844b35856))
+
 ## [2.1.0](https://github.com/web3-storage/w3up/compare/did-mailto-v2.0.2...did-mailto-v2.1.0) (2023-11-09)
 
 

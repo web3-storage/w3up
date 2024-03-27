@@ -477,6 +477,11 @@ export interface StoreAddSuccessUpload extends StoreAddSuccessResult {
   status: StoreAddSuccessStatusUpload
   url: ToString<URL>
   headers: Record<string, string>
+  /**
+   * http method to use in request to url.
+   * If undefined, try "PUT".
+   */
+  method?: string
 }
 
 export interface StoreRemoveSuccess {

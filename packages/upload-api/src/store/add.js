@@ -71,7 +71,7 @@ export function storeAddProvider(context) {
       }
     }
 
-    const { url, headers } = await carStoreBucket.createUploadUrl(link, size)
+    const { url, headers, method = 'PUT' } = await carStoreBucket.createUploadUrl(link, size)
     return {
       ok: {
         status: 'upload',
@@ -79,6 +79,7 @@ export function storeAddProvider(context) {
         with: space,
         link,
         url: url.toString(),
+        method,
         headers,
       },
     }

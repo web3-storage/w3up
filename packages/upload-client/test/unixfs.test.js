@@ -139,4 +139,17 @@ describe('UnixFS', () => {
       'bafybeie4fxkioskwb4h7xpb5f6tbktm4vjxt7rtsqjit72jrv3ii5h26sy'
     )
   })
+
+  describe('encodeDirectory', async () => {
+    it('throws an error when onDirectoryEntryLink throws an error', async () => {
+      await assert.rejects(async () => {
+        const files = [new File(['file'], 'file.txt')]
+        await encodeDirectory(files, {
+          onDirectoryEntryLink: () => {
+            throw new Error('')
+          },
+        })
+      })
+    })
+  })
 })

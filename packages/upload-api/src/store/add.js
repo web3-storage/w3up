@@ -23,7 +23,7 @@ export function storeAddProvider(context) {
     const space = /** @type {import('@ucanto/interface').DIDKey} */ (
       Server.DID.parse(capability.with).did()
     )
-    const issuer = invocation.issuer.did()
+
     const [allocated, carExists] = await Promise.all([
       allocate(
         {
@@ -47,7 +47,6 @@ export function storeAddProvider(context) {
       link,
       size,
       origin,
-      issuer,
       invocation: invocation.cid,
     })
     if (res.error) {

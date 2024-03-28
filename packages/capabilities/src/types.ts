@@ -21,6 +21,7 @@ import {
 import { space, info } from './space.js'
 import * as provider from './provider.js'
 import { top } from './top.js'
+import * as BlobCaps from './blob.js'
 import * as StoreCaps from './store.js'
 import * as UploadCaps from './upload.js'
 import * as AccessCaps from './access.js'
@@ -439,6 +440,80 @@ export interface UploadNotFound extends Ucanto.Failure {
 
 export type UploadGetFailure = UploadNotFound | Ucanto.Failure
 
+// Blob
+export type Blob = InferInvokedCapability<typeof BlobCaps.blob>
+export type BlobAdd = InferInvokedCapability<typeof BlobCaps.add>
+export type BlobRemove = InferInvokedCapability<typeof BlobCaps.remove>
+export type BlobList = InferInvokedCapability<typeof BlobCaps.list>
+export type ServiceBlob = InferInvokedCapability<typeof BlobCaps.serviceBlob>
+export type BlobAllocate = InferInvokedCapability<typeof BlobCaps.allocate>
+export type BlobAccept = InferInvokedCapability<typeof BlobCaps.accept>
+
+export type BlobMultihash = Uint8Array
+
+// Blob add
+export interface BlobAddSuccess {
+  claim: {
+    'await/ok': Link
+  }
+}
+
+export interface BlobItemSizeExceeded extends Ucanto.Failure {
+  name: 'BlobItemSizeExceeded'
+}
+export type BlobAddFailure = BlobItemSizeExceeded | Ucanto.Failure
+
+// Blob remove
+export interface BlobRemoveSuccess {
+  size: number
+}
+
+export interface BlobItemNotFound extends Ucanto.Failure {
+  name: 'BlobItemNotFound'
+}
+
+export type BlobRemoveFailure = BlobItemNotFound | Ucanto.Failure
+
+// Blob list
+export interface BlobListSuccess extends ListResponse<BlobListItem> {}
+export interface BlobListItem {
+  blob: { content: Uint8Array; size: number }
+  insertedAt: ISO8601Date
+}
+
+export type BlobListFailure = Ucanto.Failure
+
+// Blob allocate
+export interface BlobAllocateSuccess {
+  size: number
+  address?: BlobAddress
+}
+
+export interface BlobAddress {
+  url: ToString<URL>
+  headers: Record<string, string>
+}
+
+export interface BlobItemNotFound extends Ucanto.Failure {
+  name: 'BlobItemNotFound'
+}
+
+export interface BlobNotAllocableToSpace extends Ucanto.Failure {
+  name: 'BlobNotAllocableToSpace'
+}
+
+export type BlobAllocateFailure =
+  | BlobItemNotFound
+  | BlobNotAllocableToSpace
+  | Ucanto.Failure
+
+// Blob accept
+export interface BlobAcceptSuccess {
+  claim: Link
+}
+
+export type BlobAcceptFailure = BlobItemNotFound | Ucanto.Failure
+
 // Store
 export type Store = InferInvokedCapability<typeof StoreCaps.store>
 export type StoreAdd = InferInvokedCapability<typeof StoreCaps.add>
@@ -708,7 +783,14 @@ export type ServiceAbilityArray = [
   AdminStoreInspect['can'],
   PlanGet['can'],
   Usage['can'],
-  UsageReport['can']
+  UsageReport['can'],
+  Blob['can'],
+  BlobAdd['can'],
+  BlobRemove['can'],
+  BlobList['can'],
+  ServiceBlob['can'],
+  BlobAllocate['can'],
+  BlobAccept['can']
 ]
 
 /**

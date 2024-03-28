@@ -19,6 +19,7 @@ import * as DealTracker from './filecoin/deal-tracker.js'
 import * as UCAN from './ucan.js'
 import * as Plan from './plan.js'
 import * as Usage from './usage.js'
+import * as Blob from './blob.js'
 
 export {
   Access,
@@ -86,4 +87,11 @@ export const abilitiesAsStrings = [
   Plan.get.can,
   Usage.usage.can,
   Usage.report.can,
+  Blob.blob.can,
+  Blob.add.can,
+  Blob.remove.can,
+  Blob.list.can,
+  Blob.serviceBlob.can,
+  Blob.allocate.can,
+  Blob.accept.can,
 ]
